@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=./node_modules/envio/evm.schema.json
+name: envio-indexer
+contracts:
+- name: TheCompact
+  handler: src/EventHandlers.ts
+  events:
+  - event: AllocatorRegistered(uint96 allocatorId, address allocator)
+  - event: Approval(address indexed owner, address indexed spender, uint256 indexed id, uint256 amount)
+  - event: Claim(address indexed sponsor, address indexed allocator, address indexed arbiter, bytes32 claimHash, uint256 nonce)
+  - event: CompactRegistered(address indexed sponsor, bytes32 claimHash, bytes32 typehash)
+  - event: EmissaryAssigned(address indexed sponsor, bytes12 indexed lockTag, address indexed emissary)
+  - event: EmissaryAssignmentScheduled(address indexed sponsor, bytes12 indexed lockTag, uint256 assignableAt)
+  - event: ForcedWithdrawalStatusUpdated(address indexed account, uint256 indexed id, bool activating, uint256 withdrawableAt)
+  - event: NonceConsumedDirectly(address indexed allocator, uint256 nonce)
+  - event: OperatorSet(address indexed owner, address indexed operator, bool approved)
+  - event: Transfer(address by, address indexed from, address indexed to, uint256 indexed id, uint256 amount)
+networks:
+- id: 1
+  start_block: 0
+  contracts:
+  - name: TheCompact
+    address:
+    - '0x00000000000000171ede64904551eeDF3C6C9788'
+- id: 10
+  start_block: 0
+  contracts:
+  - name: TheCompact
+    address:
+    - '0x00000000000000171ede64904551eeDF3C6C9788'
+- id: 130
+  start_block: 0
+  contracts:
+  - name: TheCompact
+    address:
+    - '0x00000000000000171ede64904551eeDF3C6C9788'
+- id: 42161
+  start_block: 0
+  contracts:
+  - name: TheCompact
+    address:
+    - '0x00000000000000171ede64904551eeDF3C6C9788'
+unordered_multichain_mode: true
+preload_handlers: true
