@@ -1,29 +1,32 @@
 {
-  "name": "the-compact",
-  "version": "1.0.0",
-  "description": "The Compact is an ownerless ERC6909 contract that facilitates the voluntary formation and mediation of reusable resource locks.",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Uniswap/the-compact.git"
-  },
-  "license": "MIT",
-  "main": "src/TheCompact.sol",
+  "name": "envio-indexer",
+  "version": "0.1.0",
   "scripts": {
-    "test": "forge test --isolate && hardhat test",
-    "compile": "forge build",
-    "coverage": "COVERAGE=true forge coverage --report lcov"
-  },
-  "directories": {
-    "lib": "lib",
-    "test": "test"
+    "clean": "tsc --clean",
+    "build": "tsc --build",
+    "watch": "tsc --watch",
+    "mocha": "ts-mocha test/**/*.ts",
+    "codegen": "envio codegen",
+    "dev": "envio dev",
+    "start": "envio start",
+    "test": "pnpm mocha"
   },
   "devDependencies": {
-    "@nomicfoundation/hardhat-foundry": "^1.2.0",
-    "@nomicfoundation/hardhat-toolbox-viem": "^4.1.0",
-    "@types/chai": "^4.2.0",
-    "chai": "^4.2.0",
-    "hardhat": "^2.26.0",
-    "hardhat-gas-reporter": "^2.3.0",
-    "viem": "^2.29.2"
+    "@types/chai": "^4.3.11",    
+    "@types/mocha": "10.0.6",
+    "@types/node": "20.8.8",
+    "ts-mocha": "^10.0.0",
+    "typescript": "5.2.2",
+    "chai": "4.3.10",
+    "mocha": "10.2.0"
+  },
+  "dependencies": {
+    "envio": "2.29.1"
+  },
+  "optionalDependencies": {
+    "generated": "./generated"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }

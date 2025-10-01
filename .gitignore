@@ -14,5 +14,3 @@ typechain-types/
 /broadcast/**/dry-run/
 
 .DS_Store
-node_modules
-.env
